@@ -59,11 +59,12 @@ public class Dice {
 
     public static HashMap<Integer, Integer> analyzeArray(int[] array) {
         HashMap<Integer, Integer> amountOfNumbersInArray = new HashMap<>();
-        int count = 0;
 
         for (int number : array) {
-            amountOfNumbersInArray.put(number, count);  // Dynamiskt letar i filen hur många siffror (KEY) och mappar till VALUE, första gången SKAPAR sedan UPPDATERAR mha count variabel, pga KEY redan finns
-            count++; // Ökar på count för varje gång den stöter på en siffra för HashMap value
+            int currentValue = amountOfNumbersInArray.get(number) == null ? 0 : amountOfNumbersInArray.get(number); // NULL CHECK (ternary operator) PGA FÖRSTA GÅNGEN INGET VÄRDE, sätter 0 i value
+
+            // Ökar på count för varje gång den stöter på en siffra för HashMap value
+            amountOfNumbersInArray.put(number, currentValue + 1);  // Dynamiskt letar i filen hur många siffror (KEY) och mappar till VALUE, första gången SKAPAR sedan UPPDATERAR mha count variabel, pga KEY redan finns
         }
 
 
