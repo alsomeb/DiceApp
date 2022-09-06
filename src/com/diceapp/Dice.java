@@ -61,7 +61,7 @@ public class Dice {
         HashMap<Integer, Integer> amountOfNumbersInArray = new HashMap<>();
 
         for (int number : array) {
-            int currentValue = amountOfNumbersInArray.get(number) == null ? 0 : amountOfNumbersInArray.get(number); // NULL CHECK (ternary operator) PGA FÖRSTA GÅNGEN INGET VÄRDE, sätter 0 i value
+            int currentValue = amountOfNumbersInArray.get(number) == null ? 0 : amountOfNumbersInArray.get(number); // NULL CHECK (ternary operator) PGA FÖRSTA GÅNGEN INGET VÄRDE, sätter 0 i value annars get(key) == value
 
             // Ökar på count för varje gång den stöter på en siffra för HashMap value
             amountOfNumbersInArray.put(number, currentValue + 1);  // Dynamiskt letar i filen hur många siffror (KEY) och mappar till VALUE, första gången SKAPAR sedan UPPDATERAR mha count variabel, pga KEY redan finns
