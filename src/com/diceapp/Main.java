@@ -1,5 +1,4 @@
 package com.diceapp;
-
 import java.util.HashMap;
 
 public class Main {

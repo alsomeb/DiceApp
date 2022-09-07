@@ -2,6 +2,7 @@ package com.diceapp;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class Dice {
@@ -58,13 +59,20 @@ public class Dice {
 
 
     public static HashMap<Integer, Integer> analyzeArray(int[] array) {
-        HashMap<Integer, Integer> amountOfNumbersInArray = new HashMap<>();
+        HashMap<Integer, Integer> amountOfNumbersInArray = new HashMap<>(Map.of(
+                1, 0,
+                2, 0,
+                3, 0,
+                4, 0,
+                5, 0,
+                6, 0));
 
         for (int number : array) {
-            int currentValue = amountOfNumbersInArray.get(number) == null ? 0 : amountOfNumbersInArray.get(number); // NULL CHECK (ternary operator) PGA FÖRSTA GÅNGEN INGET VÄRDE, sätter 0 i value annars get(key) == value
+            // int currentValue = amountOfNumbersInArray.get(number) == null ? 0 : amountOfNumbersInArray.get(number); // NULL CHECK (ternary operator) PGA FÖRSTA GÅNGEN INGET VÄRDE, sätter 0 i value annars get(key) == value
 
-            // Ökar på count för varje gång den stöter på en siffra för HashMap value
-            amountOfNumbersInArray.put(number, currentValue + 1);  // Dynamiskt letar i filen hur många siffror (KEY) och mappar till VALUE, första gången SKAPAR sedan UPPDATERAR mha count variabel, pga KEY redan finns
+            int currentValueOfKey = amountOfNumbersInArray.get(number);
+            // Ökar på count för varje gång den stöter på en siffra för Map value
+            amountOfNumbersInArray.put(number, currentValueOfKey + 1);  // Dynamiskt letar i filen hur många siffror (KEY) och mappar till VALUE, första gången SKAPAR sedan UPPDATERAR mha count variabel, pga KEY redan finns
         }
 
 
@@ -73,7 +81,7 @@ public class Dice {
 
 
     public static void printAnalyzedArray(HashMap<Integer, Integer> antalSiffror) {
-        for (int siffra : antalSiffror.keySet()) { // bara 1-6 på Keys i HashMap
+        for (int siffra : antalSiffror.keySet()) { // bara 1-6 på Keys i Map
             System.out.println(antalSiffror.get(siffra) + " st " + siffra + "or"); // Hämtar VALUE med KEY och Skriver ut I terminalen
         }
     }
