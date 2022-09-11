@@ -135,7 +135,7 @@ public class Dice {
     public static void printer(HashMap<?, ?> hashMap, int[] array) {
         printArray(array);
         System.out.println("\n----------------\n");
-        hashMap.forEach( (key, value) -> System.out.println(hashMap.get(key) + " st " + key + "or")); // lambda Test
+        hashMap.forEach( (key, value) -> System.out.println(value + " st " + key + "or")); // lambda Test
     }
 
 
