@@ -9,8 +9,19 @@ public class Main {
 
         HashMap<Integer, Integer> amountOfNumbers = Dice.analyzeArray(numbers); // Analyserar stora array, bryter ner till hur många 1-6 det är mha HashMap
 
-        Dice.printAnalyzedArray(amountOfNumbers); // Skriver ut den Analys på terminalen
+        Dice.printAnalyzedArrayAsMap(amountOfNumbers); // Skriver ut den Analys på terminalen
 
         Dice.writeResultToTextFile(amountOfNumbers); // Skriver resultatet av antal 1-6 till result.txt
+
+
+
+        // Array ist för HashMap, föredrar en key-value lösning dock!
+        int[] analyzedArray = Dice.analyzeArrayReturnArray(numbers);
+        Dice.printArray(analyzedArray);
+
+
+        // Printer metod som skriver ut både Array och HashMap variant!
+        System.out.println("\n-------GENERICS--------");
+        Dice.printer(amountOfNumbers, analyzedArray);
     }
 }

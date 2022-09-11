@@ -1,6 +1,6 @@
-162 st 1or
-157 st 2or
-159 st 3or
-162 st 4or
-195 st 5or
-165 st 6or
+169 st 1or
+187 st 2or
+165 st 3or
+169 st 4or
+160 st 5or
+150 st 6or

@@ -1,9 +1,7 @@
 package com.diceapp;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Dice {
 
@@ -79,8 +77,34 @@ public class Dice {
         return amountOfNumbersInArray;
     }
 
+    public static int[] analyzeArrayReturnArray(int[] array) {
+        int[] analyzedArray = new int[6];
 
-    public static void printAnalyzedArray(HashMap<Integer, Integer> antalSiffror) {
+        for (int i = 0; i < array.length; i++) {
+            int currentNr = array[i];
+
+            switch (currentNr) {
+                case 1 -> analyzedArray[0] += 1;
+                case 2 -> analyzedArray[1] += 1;
+                case 3 -> analyzedArray[2] += 1;
+                case 4 -> analyzedArray[3] += 1;
+                case 5 -> analyzedArray[4] += 1;
+                default -> analyzedArray[5] += 1; // 6or
+            }
+        }
+
+        return analyzedArray;
+    }
+
+    public static void printArray(int[] array) {
+        System.out.println("MED ARRAY LÖSNING IST FÖR HASHMAP\n");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(i+1 + "or antal: " + array[i] );
+        }
+    }
+
+
+    public static void printAnalyzedArrayAsMap(HashMap<Integer, Integer> antalSiffror) {
         for (int siffra : antalSiffror.keySet()) { // bara 1-6 på Keys i Map
             System.out.println(antalSiffror.get(siffra) + " st " + siffra + "or"); // Hämtar VALUE med KEY och Skriver ut I terminalen
         }
@@ -104,6 +128,14 @@ public class Dice {
         } catch (IOException error) {
             error.printStackTrace();
         }
+    }
+
+
+    // (Extra för skoj) Dynamisk funktion med generics wildcard <?>, som printar vilken typ av HM som helst samt en INT array.
+    public static void printer(HashMap<?, ?> hashMap, int[] array) {
+        printArray(array);
+        System.out.println("\n----------------\n");
+        hashMap.forEach( (key, value) -> System.out.println(hashMap.get(key) + " st " + key + "or")); // lambda Test
     }
 
 
