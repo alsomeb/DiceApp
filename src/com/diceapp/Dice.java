@@ -97,7 +97,7 @@ public class Dice {
     }
 
     public static void printArray(int[] array) {
-        System.out.println("MED ARRAY LÖSNING IST FÖR HASHMAP\n");
+        System.out.println("\nMED ARRAY LÖSNING IST FÖR HASHMAP");
         for (int i = 0; i < array.length; i++) {
             System.out.println(i+1 + "or antal: " + array[i] );
         }
@@ -132,6 +132,7 @@ public class Dice {
 
 
     // (Extra för skoj) Dynamisk funktion med generics wildcard <?>, som printar vilken typ av HM som helst samt en INT array.
+    // I detta fall kanske dåligt pga vi inte vet då vilka typer vi jobbar med i funktionen...
     public static void printer(HashMap<?, ?> hashMap, int[] array) {
         printArray(array);
         System.out.println("\n----------------\n");
