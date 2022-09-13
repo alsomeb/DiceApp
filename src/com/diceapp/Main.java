@@ -14,8 +14,7 @@ public class Main {
         Dice.writeResultToTextFile(amountOfNumbers); // Skriver resultatet av antal 1-6 till result.txt
 
 
-
-        // Array ist för HashMap, föredrar en key-value lösning dock!
+        // Array LÖSNING ist för HashMap, föredrar en key-value lösning dock!
         int[] analyzedArray = Dice.analyzeArrayReturnArray(numbers);
         Dice.printArray(analyzedArray);
 
