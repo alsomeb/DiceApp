@@ -105,9 +105,7 @@ public class Dice {
 
 
     public static void printAnalyzedArrayAsMap(HashMap<Integer, Integer> antalSiffror) {
-        for (int siffra : antalSiffror.keySet()) { // bara 1-6 på Keys i Map
-            System.out.println(antalSiffror.get(siffra) + " st " + siffra + "or"); // Hämtar VALUE med KEY och Skriver ut I terminalen
-        }
+        antalSiffror.forEach( (key, value) -> System.out.println(value + " st " + key));
     }
 
 
