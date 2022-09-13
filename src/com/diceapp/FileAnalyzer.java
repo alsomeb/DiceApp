@@ -18,7 +18,7 @@ public class FileAnalyzer {
             String withoutSpace = sb.toString().replaceAll(" ", "");
 
             System.out.println("\nAntal tecken med space inkluderat som \"tecken\": " + sb.length() + "st");
-            System.out.println("\nAntal tecken: " + withoutSpace.length() + "st");
+            System.out.println("\nAntal tecken utan space: " + withoutSpace.length() + "st");
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
