@@ -19,9 +19,8 @@ public class Main {
         int[] analyzedArray = Dice.analyzeArrayReturnArray(numbers);
         Dice.printArray(analyzedArray);
 
+        // Antal tecken som finns i filen result.txt
+        FileAnalyzer.getAmountOfLettersInFile();
 
-        // Printer metod som skriver ut både Array och HashMap variant!
-        System.out.println("\n-------GENERICS--------");
-        Dice.printer(amountOfNumbers, analyzedArray);
     }
 }

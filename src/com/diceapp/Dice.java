@@ -131,13 +131,4 @@ public class Dice {
     }
 
 
-    // (Extra för skoj) Dynamisk funktion med generics wildcard <?>, som printar vilken typ av HM som helst samt en INT array.
-    // I detta fall kanske dåligt pga vi inte vet då vilka typer vi jobbar med i funktionen...
-    public static void printer(HashMap<?, ?> hashMap, int[] array) {
-        printArray(array);
-        System.out.println("\n----------------\n");
-        hashMap.forEach( (key, value) -> System.out.println(value + " st " + key + "or")); // lambda Test
-    }
-
-
 }
